@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+::selection {
+  background: #B99356;
+  color: #1B1815;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.container-edit {
+  @apply mx-auto w-full max-w-[1400px] px-6 sm:px-10 lg:px-16;
+}
+
+.eyebrow {
+  @apply text-[13px] tracking-[0.2em] text-champagne-dark font-medium;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center gap-2 bg-champagne text-charcoal px-7 py-3.5 text-sm font-semibold tracking-wide transition-colors duration-300 ease-editorial hover:bg-champagne-light;
+}
+
+.btn-outline {
+  @apply inline-flex items-center justify-center gap-2 border border-ivory/40 text-ivory px-7 py-3.5 text-sm font-semibold tracking-wide transition-colors duration-300 ease-editorial hover:border-champagne hover:text-champagne-light;
+}
+
+.btn-dark {
+  @apply inline-flex items-center justify-center gap-2 bg-charcoal text-ivory px-7 py-3.5 text-sm font-semibold tracking-wide transition-colors duration-300 ease-editorial hover:bg-charcoal-light;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #B99356;
+  outline-offset: 3px;
+}
+
+/* Custom scrollbar for horizontally-scrolling strips (galleries, tables) */
+.scrollbar-thin::-webkit-scrollbar {
+  height: 6px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: rgba(185, 147, 86, 0.5);
+}
