@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom'
 import { Instagram, MapPin, Phone, Mail } from 'lucide-react'
+import { ownerPhone } from '../data/contact'
+import { formatPhone, phoneHref } from '../utils/phone'
 
 export default function Footer() {
   return (
@@ -37,7 +39,7 @@ export default function Footer() {
           <ul className="space-y-4 text-sm">
             <li className="flex items-start gap-3">
               <Phone size={16} className="mt-0.5 text-champagne-light shrink-0" />
-              <a href="tel:+918290859783" className="hover:text-champagne-light transition-colors">+91 82908 59783</a>
+              <a href={phoneHref(ownerPhone)} className="hover:text-champagne-light transition-colors">{formatPhone(ownerPhone)}</a>
             </li>
             <li className="flex items-start gap-3">
               <Mail size={16} className="mt-0.5 text-champagne-light shrink-0" />

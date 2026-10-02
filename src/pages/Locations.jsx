@@ -1,7 +1,8 @@
 import ScrollReveal from '../components/ScrollReveal'
 import useSEO from '../utils/useSEO'
 import { getAllHotels } from '../utils/hotelHelpers'
-import { Building2, ExternalLink, MapPin } from 'lucide-react'
+import { formatPhone, phoneHref } from '../utils/phone'
+import { Building2, ExternalLink, MapPin, Phone } from 'lucide-react'
 import { motion, useReducedMotion } from 'framer-motion'
 
 export default function Locations() {
@@ -62,6 +63,18 @@ export default function Locations() {
                   <MapPin size={17} className="mt-0.5 shrink-0 text-champagne-dark" />
                   <span>{hotel.address}</span>
                 </p>
+                {hotel.phone && (
+                  <p className="mt-3 flex items-center gap-2 text-sm">
+                    <Phone size={16} className="shrink-0 text-champagne-dark" />
+                    <a
+                      href={phoneHref(hotel.phone)}
+                      className="text-charcoal/70 transition-colors hover:text-champagne-dark"
+                      aria-label={`Call ${hotel.name} at ${hotel.phone}`}
+                    >
+                      {formatPhone(hotel.phone)}
+                    </a>
+                  </p>
+                )}
                 <div className="mt-auto flex flex-wrap gap-3 pt-7">
                   {hotel.mapUrl && (
                     <a

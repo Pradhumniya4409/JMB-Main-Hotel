@@ -11,6 +11,7 @@ import CTASection from '../components/CTASection'
 import ScrollReveal from '../components/ScrollReveal'
 import useSEO from '../utils/useSEO'
 import { getHotelBySlug } from '../utils/hotelHelpers'
+import { formatPhone, phoneHref } from '../utils/phone'
 import NotFound from './NotFound'
 
 export default function HotelDetails() {
@@ -39,7 +40,7 @@ export default function HotelDetails() {
         subtitle={hotel.tagline}
         height="h-[72vh]"
       >
-        <a href={`tel:${hotel.phone}`} className="btn-primary">
+        <a href={phoneHref(hotel.phone)} className="btn-primary">
           <Phone size={16} /> Call Hotel
         </a>
         <a href={waHref} target="_blank" rel="noreferrer" className="btn-outline">
@@ -80,7 +81,7 @@ export default function HotelDetails() {
             </li>
             <li className="flex justify-between gap-4">
               <span className="text-charcoal/50">Phone</span>
-              <a href={`tel:${hotel.phone}`} className="text-champagne-dark hover:text-champagne">{hotel.phone}</a>
+              <a href={phoneHref(hotel.phone)} className="text-champagne-dark hover:text-champagne">{formatPhone(hotel.phone)}</a>
             </li>
             {hotel.email && (
               <li className="flex justify-between gap-4">

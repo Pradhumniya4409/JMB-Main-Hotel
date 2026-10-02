@@ -1,6 +1,8 @@
 import { Phone, Mail, MapPin } from 'lucide-react'
 import ScrollReveal from '../components/ScrollReveal'
 import useSEO from '../utils/useSEO'
+import { ownerPhone } from '../data/contact'
+import { formatPhone, phoneHref } from '../utils/phone'
 
 export default function Contact() {
   useSEO({
@@ -28,8 +30,8 @@ export default function Contact() {
           <ScrollReveal className="border border-charcoal/10 p-7">
             <Phone className="mb-5 text-champagne-dark" size={22} />
             <h2 className="font-display text-xl text-charcoal mb-2">Call Us</h2>
-            <a href="tel:+918290859783" className="text-sm text-charcoal/65 hover:text-champagne-dark">
-              +91 82908 59783
+            <a href={phoneHref(ownerPhone)} className="text-sm text-charcoal/65 hover:text-champagne-dark">
+              {formatPhone(ownerPhone)}
             </a>
           </ScrollReveal>
           <ScrollReveal delay={0.08} className="border border-charcoal/10 p-7">

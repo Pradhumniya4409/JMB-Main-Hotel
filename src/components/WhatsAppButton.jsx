@@ -1,8 +1,9 @@
 import { MessageCircle } from 'lucide-react'
+import { ownerWhatsApp } from '../data/contact'
 
 // Falls back to the group's primary WhatsApp number when no hotel-specific
 // number is supplied (e.g. on pages not scoped to one property).
-export default function WhatsAppButton({ number = '918290859783', message = 'Hi, I would like to enquire about a stay at JMB Hotels.' }) {
+export default function WhatsAppButton({ number = ownerWhatsApp, message = 'Hi, I would like to enquire about a stay at JMB Hotels.' }) {
   const href = `https://wa.me/${number}?text=${encodeURIComponent(message)}`
   return (
     <a

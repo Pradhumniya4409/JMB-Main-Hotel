@@ -4,6 +4,7 @@ import { AnimatePresence } from 'framer-motion'
 
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import CallButton from './components/CallButton'
 import WhatsAppButton from './components/WhatsAppButton'
 import PageTransition from './components/PageTransition'
 import LoaderScreen from './components/LoaderScreen'
@@ -41,6 +42,7 @@ export default function App() {
             </AnimatePresence>
           </main>
           <Footer />
+          <CallButton />
           <WhatsAppButton />
         </>
       )}

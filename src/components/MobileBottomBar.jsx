@@ -1,5 +1,6 @@
 import { Phone, MessageCircle, CalendarCheck } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import { phoneHref } from '../utils/phone'
 
 export default function MobileBottomBar({ phone, whatsappNumber, hotelSlug }) {
   const waHref = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
@@ -8,7 +9,7 @@ export default function MobileBottomBar({ phone, whatsappNumber, hotelSlug }) {
 
   return (
     <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 grid grid-cols-3 bg-charcoal border-t border-ivory/10">
-      <a href={`tel:${phone}`} className="flex flex-col items-center justify-center gap-1 py-3 text-ivory/85 border-r border-ivory/10">
+      <a href={phoneHref(phone)} className="flex flex-col items-center justify-center gap-1 py-3 text-ivory/85 border-r border-ivory/10">
         <Phone size={18} />
         <span className="text-[11px] tracking-wide">Call</span>
       </a>

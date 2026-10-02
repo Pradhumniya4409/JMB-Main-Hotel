@@ -10,6 +10,7 @@ import {
 } from 'lucide-react'
 import ScrollReveal from './ScrollReveal'
 import { getAllHotels } from '../utils/hotelHelpers'
+import { ownerWhatsApp } from '../data/contact'
 
 const amenityIcons = {
   '24-Hour Front Desk': Clock3,
@@ -49,7 +50,7 @@ export default function HomeExperienceSection() {
     },
     {
       label: 'WhatsApp enquiries',
-      href: 'https://wa.me/918290859783',
+      href: `https://wa.me/${ownerWhatsApp}`,
       icon: MessageCircle,
     },
   ]
